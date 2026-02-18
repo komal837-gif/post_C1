@@ -1,0 +1,26 @@
+
+<div class="card mt-4">
+    <div class="card-body">
+        <h2 class="alert alert-info text-center p-0">{{isInEditMode? 'Update post' : 'Add Post'}}</h2>
+<form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label class="font-weight-bold" for="title">Title<sup>*</sup></label>
+        <input type="text" class="form-control" formControlName="title">
+    </div>
+        <div class="form-group">
+        <label class="font-weight-bold" for="content">content<sup>*</sup></label>
+        <input type="text" class="form-control" formControlName="content">
+    </div>
+        <div class="form-group">
+        <label class="font-weight-bold" for="userId">UserId<sup>*</sup></label>
+        <!-- <input type="text" class="form-control" formControlName="userId"> -->
+        <select type="text" class="form-control" formControlName="userId">
+            <option *ngFor="let val of optionalval"  [ngValue]="val">{{val}}</option>
+        </select>
+    </div>
+
+    <button class="btn btn-block" *ngIf="!isInEditMode" mat-raised-button color="primary">Add Post</button>
+    <button (click)="onUpdate()" type="button" class="btn btn-block" *ngIf="isInEditMode" mat-raised-button color="accent">Update Post</button>
+</form>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+
+<mat-card  class="h-100 mat-card">
+  <mat-card-title class="title">{{postObj.title}}</mat-card-title>
+  <mat-divider inset></mat-divider>
+  <mat-card-content class="p-4">{{postObj.content}}</mat-card-content>
+  <mat-divider inset></mat-divider>
+  <mat-card-actions class="d-flex justify-content-between align-items-center">
+    <button (click)="onEdit(postObj)" mat-button color="primary">Edit</button>
+    <button (click)="onRemove(postObj)" mat-button color="warn">Delete</button>
+  </mat-card-actions>
+</mat-card>
+
